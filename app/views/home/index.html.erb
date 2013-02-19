@@ -1,0 +1,12 @@
+<% if current_user %>
+  <%= link_to "Log Out", log_out_path %><br>
+  Signed in as <%= current_user.email %>
+<% else %>
+  <div id="sign-up">
+    <%= link_to "Sign Up", sign_up_path %> | <%= link_to "Log In", log_in_path %>
+  </div>
+<% end %>
+
+
+<h1>Fabflix Home</h1>
+
