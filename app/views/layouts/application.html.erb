@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Fabflix - <%= yield :title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -35,9 +36,7 @@
         </div>
       <% end %>
       
-      <div data-pjax-container>
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
   </body>
 </html>
