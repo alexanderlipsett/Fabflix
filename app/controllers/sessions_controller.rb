@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  # use https in production environment
+  force_ssl
+  
   def new
   end
   

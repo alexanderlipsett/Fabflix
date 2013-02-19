@@ -1,11 +1,13 @@
 Fabflix::Application.routes.draw do
+  resources :stars
+  resources :movies
+  resources :users
+
   get "sign_up" => "users#new", :as => "sign_up"
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   post "new_session" => "sessions#create", :as => "new_session"
   
-  resources :users
-
   root :to => 'home#index'
   
   # The priority is based upon order of creation:

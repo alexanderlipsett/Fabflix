@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  # use https in production environment
+  force_ssl
+  
   def new
     @user = User.new
   end
