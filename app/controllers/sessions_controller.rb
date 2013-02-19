@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   # use https in production environment
   force_ssl
   
+  skip_before_filter :require_login
+  
   def new
   end
   
