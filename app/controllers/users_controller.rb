@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   # use https in production environment
   force_ssl
   
+  skip_before_filter :require_login, :only => [:new, :create]
+  
   def new
     @user = User.new
   end
@@ -12,7 +14,6 @@ class UsersController < ApplicationController
       flash[:notice] = 'Thank you for signing up!'
       redirect_to root_url
     else
-      flash.now.alert = 'Invalid data'
       render "new"
     end
   end
